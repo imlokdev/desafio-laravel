@@ -1,5 +1,5 @@
 @if (session()->has('success') || session()->has('error'))
-    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div class="toast-container position-fixed top-0 end-0 p-3">
         @php
             $isSuccess = session()->has('success');
             $bgColor = $isSuccess ? 'text-bg-success' : 'text-bg-danger';
