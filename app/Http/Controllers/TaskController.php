@@ -34,7 +34,7 @@ class TaskController extends Controller
         try {
             $infos = $request->validate([
                 'title' => 'required|string|max:250',
-                'description' => 'required|string|max:500',
+                'description' => 'nullable|string|max:500',
                 'completed' => 'boolean'
             ]);
             

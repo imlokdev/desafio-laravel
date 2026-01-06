@@ -16,7 +16,7 @@
           </div>
           <div class="mb-3">
             <label class="col-form-label">Descrição:</label>
-            <textarea name="description" class="form-control" placeholder="Detalhes da tarefa..." required></textarea>
+            <textarea name="description" class="form-control" placeholder="Detalhes da tarefa..."></textarea>
           </div>
           <div class="mb-3">
             <div class="form-check form-switch">
