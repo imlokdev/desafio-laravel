@@ -28,8 +28,8 @@
         </form>
       </div>
       <div class="modal-footer">
-        <button type="reset" class="btn btn-secondary" data-bs-dismiss="modal" form="createTaskForm">Cancelar</button>
-        <button type="submit" class="btn btn-primary" form="createTaskForm">Salvar</button>
+        <button id="resetBtnCreate" type="reset" class="btn btn-secondary" data-bs-dismiss="modal" form="createTaskForm">Cancelar</button>
+        <button id="submitBtnCreate" type="submit" class="btn btn-primary" form="createTaskForm">Criar</button>
       </div>
     </div>
   </div>
@@ -56,7 +56,7 @@
           </div>
           <div class="mb-3">
             <label for="task-description" class="col-form-label">Descrição:</label>
-            <textarea name="description" class="form-control" id="task-description" placeholder="Detalhes da tarefa..." required></textarea>
+            <textarea name="description" class="form-control" id="task-description" placeholder="Detalhes da tarefa..."></textarea>
           </div>
           <div class="mb-3">
             <div class="form-check form-switch">
@@ -68,7 +68,7 @@
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="reset" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
         <button type="submit" class="btn btn-primary" form="editTaskForm">Salvar</button>
       </div>
     </div>
@@ -87,18 +87,17 @@
             </div>
             <div class="modal-body">
                 <div class="modal-body">
-                  <h2 class="fs-5">Você tem certeza disso?</h2>
-                  <small><em>Obs: Esta ação é irreversível.</em></small>
+                  <h2 class="fs-5 text-center">Você tem certeza disso?</h2>
+                  <small class="text-center d-block"><em>Obs: Esta ação é irreversível.</em></small>
                 </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
                 <form id="deleteTaskForm" action="#" method="post">
                   @csrf
                   @method('DELETE')
-                  <input type="hidden" id="task-id" value="0">
-                  <button type="submit" class="btn btn-{{ $active ? "warning" : "danger"}}">{{ $active ? "Arquivar" : "Excluir"}}</button>
                 </form>
+            </div>
+            <div class="modal-footer">
+                <button type="reset" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="submit" class="btn btn-danger" form="deleteTaskForm">Excluir</button>
             </div>
         </div>
     </div>
