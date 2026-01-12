@@ -18,3 +18,6 @@ steps:
 
 images:
   - 'southamerica-east1-docker.pkg.dev/$PROJECT_ID/cloud-run-source-deploy/desafio-laravel'
+
+options:
+  logging: CLOUD_LOGGING_ONLY
