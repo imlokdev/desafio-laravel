@@ -13,7 +13,7 @@ Este projeto é uma aplicação de **Gerenciamento de Tarefas** desenvolvida com
 A aplicação está rodando em produção na infraestrutura do **Laravel Cloud**.
 Você pode testar todas as funcionalidades (Criar, Editar, Arquivar e Restaurar tarefas) no link abaixo:
 
-👉 **[Acessar Projeto (Live Demo)](https://imlok-chat-484004.web.app/tasks)**
+👉 **[Acessar Projeto (Live Demo)](https://desafio-laravel.web.app/tasks)**
 
 ---
 
