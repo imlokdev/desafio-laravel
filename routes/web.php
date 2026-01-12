@@ -18,7 +18,7 @@ Route::put('/archives/{task}', [TaskController::class, 'restore'])->name('tasks.
 Route::delete('/archives/{task}', [TaskController::class, 'destroy'])->name('tasks.destroy')->withTrashed();
 
 Route::get('/.well-known/discord', function () {
-    return Response::make('dh=ff3a218acc8af838cb6c85fba1904de6505d43d5', 200, [
+    return Response::make('dh=fc4510d8a04a22e94d2d9bab1504bf71706a64db', 200, [
         'Content-Type' => 'text/plain'
     ]);
 });

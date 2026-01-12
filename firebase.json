@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "desafio-laravel",
     "public": "public",
     "ignore": [
       "firebase.json",
