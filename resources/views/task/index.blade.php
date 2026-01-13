@@ -33,11 +33,11 @@
                         data-bs-target="#deleteTaskModal"
                         data-bs-delAll="true"
                         data-bs-html="true"
-                        data-bs-title="Clique para <b>EXCLUIR</b> a tarefa permanentemente."
+                        data-bs-title="Clique para <b>EXCLUIR</b> todas as tarefas permanentemente."
                         data-bs-taskCount="{{ $tasks->total() }}"
                     >
                             <i class="bi bi-trash-fill"></i>
-                            Excluir tudo
+                            Esvaziar
                     </button>
                 @endif
 
