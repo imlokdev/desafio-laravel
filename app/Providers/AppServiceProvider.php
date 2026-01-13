@@ -6,6 +6,7 @@ use Illuminate\Pagination\Paginator;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\URL;
+use Spatie\Activitylog\Models\Activity;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -28,5 +29,9 @@ class AppServiceProvider extends ServiceProvider
         if ($this->app->environment('production') || env('APP_ENV') !== 'local') {
             URL::forceScheme('https');
         }
+
+        Activity::creating(function (Activity $activity) {
+            $activity->ip_address = request()->ip();
+        });
     }
 }
