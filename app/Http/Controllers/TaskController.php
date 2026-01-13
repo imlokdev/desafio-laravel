@@ -7,9 +7,6 @@ use Illuminate\Http\Request;
 
 class TaskController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
         return view('task.index', [
@@ -26,9 +23,6 @@ class TaskController extends Controller
         ]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
         try {
@@ -46,9 +40,6 @@ class TaskController extends Controller
         }
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, Task $task)
     {
         try {
@@ -86,9 +77,6 @@ class TaskController extends Controller
         }
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(Task $task)
     {
         try {
@@ -105,7 +93,7 @@ class TaskController extends Controller
             Task::onlyTrashed()->forceDelete();
             return redirect()->back()->with('success', 'Todas as tarefas foram excluídas com sucesso!');
         } catch (\Exception $e) {
-            return redirect()->back()->with('error', 'Não foi possivel excluir a tarefa.');
+            return redirect()->back()->with('error', 'Não foi possivel excluir todas as tarefas.');
         }
     }
 }
