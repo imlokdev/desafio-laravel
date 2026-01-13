@@ -77,7 +77,7 @@
 
 {{-- Fim Modal --}}
 
-{{-- Modal SoftDelete Tarefa --}}
+{{-- Modal Delete Tarefa --}}
 
 <div class="modal fade" id="deleteTaskModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">

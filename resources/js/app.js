@@ -32,8 +32,19 @@ if (deleteModal) {
         const button = event.relatedTarget
         const id = button.getAttribute('data-bs-taskId')
         const form = deleteModal.querySelector('#deleteTaskForm')
-        
-        form.action = `/archives/${id}`
+
+        if (button.hasAttribute('data-bs-delAll')){
+            const count = button.getAttribute('data-bs-taskCount')
+            const text = deleteModal.querySelector('h1')
+            text.innerHTML = `Excluir todas as ${count} tarefas?`
+
+            form.action = `/archives`
+        }
+        else {
+            const text = deleteModal.querySelector('h1')
+            text.innerHTML = "Excluir Tarefa"
+            form.action = `/archives/${id}`
+        }
     })
 }
 

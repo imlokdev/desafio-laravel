@@ -25,11 +25,28 @@
                 </button>
             </div>
         @else
-            <a class="btn btn-outline-primary bs-dark" data-bs-title="Clique para voltar para as tarefas <b>ativas</b>."
-            data-bs-html="true" data-bs-placement="left" data-bs-offset="0,10"
-            href="{{ route('tasks.index') }}">
-                <i class="bi bi-arrow-left me-1"></i> Voltar
-            </a>
+            <div class="d-flex gap-2">
+                @if ($tasks->count() > 1)
+                    <button
+                        class="btn btn-danger btn-sm p-2"
+                        data-bs-toggle="modal"
+                        data-bs-target="#deleteTaskModal"
+                        data-bs-delAll="true"
+                        data-bs-html="true"
+                        data-bs-title="Clique para <b>EXCLUIR</b> a tarefa permanentemente."
+                        data-bs-taskCount="{{ $tasks->total() }}"
+                    >
+                            <i class="bi bi-trash-fill"></i>
+                            Excluir tudo
+                    </button>
+                @endif
+
+                <a class="btn btn-outline-primary bs-dark" data-bs-title="Clique para voltar para as tarefas <b>ativas</b>."
+                data-bs-html="true" data-bs-placement="left" data-bs-offset="0,10"
+                href="{{ route('tasks.index') }}">
+                    <i class="bi bi-arrow-left me-1"></i> Voltar
+                </a>
+            </div>
         @endif
     </div>
     

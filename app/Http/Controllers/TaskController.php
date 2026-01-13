@@ -98,4 +98,14 @@ class TaskController extends Controller
             return redirect()->back()->with('error', 'Não foi possivel excluir a tarefa.');
         }
     }
+
+    public function destroyAll()
+    {
+        try {
+            Task::onlyTrashed()->forceDelete();
+            return redirect()->back()->with('success', 'Todas as tarefas foram excluídas com sucesso!');
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Não foi possivel excluir a tarefa.');
+        }
+    }
 }

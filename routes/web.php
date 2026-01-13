@@ -14,6 +14,7 @@ Route::delete('/tasks/{task}', [TaskController::class, 'archive'])->name('tasks.
 Route::put('/tasks/{task}', [TaskController::class, 'update'])->name('tasks.update');
 
 Route::get('/archives', [TaskController::class, 'trash'])->name('tasks.trash');
+Route::delete('/archives', [TaskController::class, 'destroyAll'])->name('tasks.destroyAll');
 Route::put('/archives/{task}', [TaskController::class, 'restore'])->name('tasks.restore')->withTrashed();
 Route::delete('/archives/{task}', [TaskController::class, 'destroy'])->name('tasks.destroy')->withTrashed();
 
