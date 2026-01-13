@@ -90,7 +90,13 @@ class TaskController extends Controller
     public function destroyAll()
     {
         try {
-            Task::onlyTrashed()->forceDelete();
+            $totalDeleted = Task::onlyTrashed()->forceDelete();
+
+            if ($totalDeleted > 0) {
+                activity()
+                    ->withProperties(['quantity' => $totalDeleted])
+                    ->log('emptied the trash can');
+            }
             return redirect()->back()->with('success', 'Todas as tarefas foram excluídas com sucesso!');
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'Não foi possivel excluir todas as tarefas.');
